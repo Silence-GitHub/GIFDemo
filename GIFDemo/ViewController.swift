@@ -11,7 +11,7 @@ import Photos
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    var imageView: UIImageView!
+    var imageView: FLAnimatedImageView!
     
     var imageData: Data?
     
@@ -21,7 +21,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveImage))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Pick", style: .plain, target: self, action: #selector(pickImage))
         
-        imageView = UIImageView(frame: CGRect(x: 10, y: 100, width: UIScreen.main.bounds.width - 20, height: 300))
+        imageView = FLAnimatedImageView(frame: CGRect(x: 10, y: 100, width: UIScreen.main.bounds.width - 20, height: 300))
+        imageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)
     }
     
@@ -71,7 +72,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             PHImageManager.default().requestImageData(for: asset, options: nil, resultHandler: { (imageData, _, _, _) in
                 if let data = imageData {
                     self.imageData = data
-                    self.imageView.image = UIImage.sd_animatedGIF(with: data)
+                    self.imageView.animatedImage = FLAnimatedImage(animatedGIFData: data)
                 }
             })
         }
