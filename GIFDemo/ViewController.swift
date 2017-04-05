@@ -21,9 +21,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveImage))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Pick", style: .plain, target: self, action: #selector(pickImage))
         
-        imageView = FLAnimatedImageView(frame: CGRect(x: 10, y: 100, width: UIScreen.main.bounds.width - 20, height: 300))
+        imageView = FLAnimatedImageView(frame: CGRect(x: 0,
+                                                      y: 64,
+                                                      width: UIScreen.main.bounds.width,
+                                                      height: 300))
         imageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)
+        
+        let button = UIButton(frame: CGRect(x: 0,
+                                            y: UIScreen.main.bounds.height - 50,
+                                            width: view.bounds.width,
+                                            height: 50))
+        button.backgroundColor = .blue
+        button.setTitle("Table view", for: .normal)
+        button.addTarget(self, action: #selector(pushToTVC), for: .touchUpInside)
+        view.addSubview(button)
     }
     
     func saveImage() {
@@ -60,6 +72,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         picker.sourceType = .photoLibrary
         picker.delegate = self
         present(picker, animated: true, completion: nil)
+    }
+    
+    func pushToTVC() {
+        navigationController?.pushViewController(TableViewController(), animated: true)
     }
     
     // MARK: - UIImagePickerControllerDelegate
