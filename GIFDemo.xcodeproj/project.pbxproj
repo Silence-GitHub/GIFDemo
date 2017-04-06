@@ -69,6 +69,7 @@
 		4A0AC55B1E892092000A1451 /* GIFDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4AFDCFEF1E95175600098554 /* FLAnimatedImageView+AsyncLoad.swift */,
 				4A0AC55C1E892092000A1451 /* AppDelegate.swift */,
 				4AFDCFED1E9516D500098554 /* Controller */,
 				4AFDCFEE1E9516DF00098554 /* View */,
@@ -85,7 +86,6 @@
 			children = (
 				4A0AC55E1E892092000A1451 /* ViewController.swift */,
 				4AFDCFE91E950EA500098554 /* TableViewController.swift */,
-				4AFDCFEF1E95175600098554 /* FLAnimatedImageView+AsyncLoad.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
