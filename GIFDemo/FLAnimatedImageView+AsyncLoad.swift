@@ -12,8 +12,6 @@ extension FLAnimatedImageView {
     
     func setImage(with url: URL?, placeholderImage: UIImage?) {
         sd_internalSetImage(with: url, placeholderImage: placeholderImage, options: SDWebImageOptions(rawValue: 0), operationKey: nil, setImageBlock: { [weak self] (image, imageData) in
-            guard self != nil else { return }
-            
             DispatchQueue.global(qos: .userInteractive).async { [weak self] in
                 guard self != nil else { return }
                 
