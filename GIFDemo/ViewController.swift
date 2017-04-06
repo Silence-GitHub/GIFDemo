@@ -33,7 +33,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                             width: view.bounds.width,
                                             height: 50))
         button.backgroundColor = .blue
-        button.setTitle("Table view", for: .normal)
+        button.setTitle("Show table view", for: .normal)
         button.addTarget(self, action: #selector(pushToTVC), for: .touchUpInside)
         view.addSubview(button)
     }
