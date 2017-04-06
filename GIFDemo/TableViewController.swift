@@ -31,7 +31,6 @@ class TableViewController: UITableViewController {
     @objc private func rightButonClicked() {
         rightButton.isSelected = !rightButton.isSelected
         title = rightButton.isSelected ? "Async" : "Default"
-        tableView.reloadData()
     }
 
     // MARK: - Table view data source
