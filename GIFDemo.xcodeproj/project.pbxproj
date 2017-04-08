@@ -28,7 +28,7 @@
 		4A0AC5631E892092000A1451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A0AC5661E892092000A1451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A0AC5681E892092000A1451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A0AC56E1E8932F3000A1451 /* GIFDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GIFDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		4A2BB4991E98ED8D00AF1C2B /* GIFDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GIFDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		4AFDCFE91E950EA500098554 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		4AFDCFEB1E950FD200098554 /* GIFCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFCell.swift; sourceTree = "<group>"; };
 		4AFDCFEF1E95175600098554 /* FLAnimatedImageView+AsyncLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FLAnimatedImageView+AsyncLoad.swift"; sourceTree = "<group>"; };
@@ -52,7 +52,6 @@
 			children = (
 				4A0AC55B1E892092000A1451 /* GIFDemo */,
 				4A0AC55A1E892092000A1451 /* Products */,
-				4A0AC56E1E8932F3000A1451 /* GIFDemo-Bridging-Header.h */,
 				70FAF2289DAD1A9DD9DCB067 /* Pods */,
 				7AD14EF087FF8E5DDAB107FE /* Frameworks */,
 			);
@@ -71,6 +70,7 @@
 			children = (
 				4AFDCFEF1E95175600098554 /* FLAnimatedImageView+AsyncLoad.swift */,
 				4A0AC55C1E892092000A1451 /* AppDelegate.swift */,
+				4A2BB4991E98ED8D00AF1C2B /* GIFDemo-Bridging-Header.h */,
 				4AFDCFED1E9516D500098554 /* Controller */,
 				4AFDCFEE1E9516DF00098554 /* View */,
 				4A0AC5601E892092000A1451 /* Main.storyboard */,
@@ -375,7 +375,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kaibo.GIFDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GIFDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GIFDemo/GIFDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -393,7 +393,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kaibo.GIFDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GIFDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GIFDemo/GIFDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
