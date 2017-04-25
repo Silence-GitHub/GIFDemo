@@ -44,6 +44,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             PHPhotoLibrary.shared().performChanges({ 
                 PHAssetCreationRequest.forAsset().addResource(with: .photo, data: data, options: nil)
             }, completionHandler: { (success, error) in
+                // NOT in main thread
                 if success {
                     print("Saved")
                 } else if let error = error {
@@ -56,14 +57,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             try? data.write(to: tempUrl)
             PHPhotoLibrary.shared().performChanges({
                 PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: tempUrl)
-            }) { (success, error) in
+            }, completionHandler: { (success, error) in
+                // NOT in main thread
                 if success {
                     print("Saved")
                 } else if let error = error {
                     print(error)
                 }
                 try? FileManager.default.removeItem(at: tempUrl)
-            }
+            })
         }
     }
     
@@ -86,6 +88,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         if let url = info[UIImagePickerControllerReferenceURL] as? URL,
             let asset = PHAsset.fetchAssets(withALAssetURLs: [url], options: nil).firstObject {
             PHImageManager.default().requestImageData(for: asset, options: nil, resultHandler: { (imageData, _, _, _) in
+                // In main thread
                 if let data = imageData {
                     self.imageData = data
                     self.imageView.animatedImage = FLAnimatedImage(animatedGIFData: data)
